@@ -1,0 +1,13 @@
+experiment:
+  name: MELD/BiDialogRNN
+  store_path: /panasas/scratch/grp-sreyasee/sidharth/stores/affect
+  workers: 8
+
+  data: !ref data/meld-openface.yaml
+
+  model: !ref models/bidrnn.yaml
+
+  train:
+    epochs: 100
+    learning_rate: 0.001
+    optimizer: Adam

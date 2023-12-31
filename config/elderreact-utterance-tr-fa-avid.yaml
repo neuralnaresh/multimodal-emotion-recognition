@@ -1,0 +1,16 @@
+experiment:
+  name: ElderReact/[Utterance/Transformers/Faces,Audio/AVID]
+  store_path:  /panasas/scratch/grp-sreyasee/sidharth/stores/utterance
+  workers: 28
+
+  data: !ref data/elderreact.yaml
+
+  model: !ref models/utterance-tr-fa-avid.yaml
+
+  train:
+    epochs: 200
+    learning_rate: 0.0005
+    optimizer:
+        optimizer: Adam
+        config:
+            weight_decay: 0.0002

@@ -1,0 +1,18 @@
+name: IEMOCAP
+preprocess:
+  preprocessor: iemocap
+  dataset_path: /panasas/scratch/grp-sreyasee/sidharth/datasets/iemocap
+transform:
+  transforms:
+    - extract_frames
+    - embed_text
+    - extract_pyfeat
+    - landmarks_to_graph
+    - extract_audio_features
+  config:
+    landmarks_to_graph:
+      convert_mocap: true
+loader:
+  name: iemocap_conversational
+
+batch_size: 2

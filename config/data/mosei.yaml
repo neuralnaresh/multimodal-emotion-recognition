@@ -1,0 +1,14 @@
+name: MOSEI
+preprocess:
+  preprocessor: mosei
+  dataset_path: /panasas/scratch/grp-sreyasee/sidharth/datasets/mosei
+transform:
+  transforms:
+    - extract_frames
+    - load_video
+    - extract_audio
+    - load_audio
+loader:
+  name: mmt
+
+batch_size: 16

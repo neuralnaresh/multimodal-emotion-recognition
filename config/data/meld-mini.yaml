@@ -1,0 +1,13 @@
+name: MELD
+preprocess:
+  preprocessor: meld
+  dataset_path: /panasas/scratch/grp-sreyasee/sidharth/datasets/meld
+transform:
+  transforms:
+    - extract_audio
+    - embed_text
+    - extract_audio_features
+loader:
+  name: meld_conversational
+
+batch_size: 16

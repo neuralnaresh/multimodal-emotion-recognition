@@ -1,0 +1,17 @@
+experiment:
+  name: MOSEI/MMT
+  store_path:  /panasas/scratch/grp-sreyasee/sidharth/stores/utterance
+  workers: 28
+
+  data: !ref data/mosei.yaml
+
+  model: !ref models/mmt.yaml
+
+  train:
+    parallelization: fsdp
+    epochs: 750
+    learning_rate: 0.0001
+    optimizer:
+        optimizer: Adam
+        config:
+            weight_decay: 0.0002

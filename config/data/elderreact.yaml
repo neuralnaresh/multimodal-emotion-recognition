@@ -1,0 +1,23 @@
+name: ElderReact
+preprocess:
+  preprocessor: elderreact
+  dataset_path: /panasas/scratch/grp-sreyasee/sidharth/datasets/elderreact
+transform:
+  transforms:
+    - extract_frames
+    - extract_audio
+    - extract_pyfeat
+    - extract_audio_features
+    - extract_text
+    - embed_text
+    - extract_faces
+    - load_frames
+    - load_audio
+    - landmarks_to_graph
+  config:
+    landmarks_to_graph:
+      edges_first: true
+loader:
+  name: elderreact
+
+batch_size: 4

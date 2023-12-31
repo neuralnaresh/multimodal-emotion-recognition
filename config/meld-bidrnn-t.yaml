@@ -1,0 +1,13 @@
+experiment:
+  name: MELD/BiDialogRNN[Text]
+  store_path: /panasas/scratch/grp-sreyasee/sidharth/stores/affect
+  workers: 28
+
+  data: !ref data/meld.yaml
+
+  model: !ref models/bidrnn-t.yaml
+
+  train:
+    epochs: 100
+    learning_rate: 0.0005
+    optimizer: Adam

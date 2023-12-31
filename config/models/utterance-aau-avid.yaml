@@ -1,0 +1,33 @@
+name: utterance
+config:
+  utterance:
+    encoders:
+      encoders:
+        - 
+          name: audio_features
+          type: fc
+          config:
+            hidden_size: 128
+            output_size: 64
+        -
+          name: primary_face_aus
+          type: rnn
+    fusions:
+      -
+        modules:
+          - 
+            type: alfamix
+    classify:
+      - 0
+      - 1
+    losses:
+      losses:
+        - 
+          type: avid
+          weight: 0.5
+          results: []
+          stages:
+            - 0
+        -
+          type: multilabelsoftmargin
+          weight: 1.0

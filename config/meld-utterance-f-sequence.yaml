@@ -1,0 +1,13 @@
+experiment:
+  name: MELD/Utterance[Frames/Sequence]
+  store_path: /panasas/scratch/grp-sreyasee/sidharth/stores/affect
+  workers: 28
+
+  data: !ref data/meld-utterance.yaml
+
+  model: !ref models/utterance-f-sequence.yaml
+
+  train:
+    epochs: 100
+    learning_rate: 0.0005
+    optimizer: Adam

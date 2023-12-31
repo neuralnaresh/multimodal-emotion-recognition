@@ -1,0 +1,16 @@
+experiment:
+  name: IEMOCAP/[DialogCRN/Text,AU]
+  store_path:  /panasas/scratch/grp-sreyasee/sidharth/stores/affect
+  workers: 28
+
+  data: !ref data/iemocap-pyfeat.yaml
+
+  model: !ref models/dcrn-tau.yaml
+
+  train:
+    epochs: 200
+    learning_rate: 0.0005
+    optimizer:
+        optimizer: Adam
+        config:
+            weight_decay: 0.0002

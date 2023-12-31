@@ -1,0 +1,67 @@
+name: dcrn
+config:
+  dcrn:
+    attention:
+      modules:
+        -
+          type: multiinject
+          inputs:
+            - text_embedding
+            - primary_face_aus_embedding
+            - audio_features
+          config:
+            hidden_size: 512
+            output_size: 256
+        -
+          type: multiinject
+          inputs:
+            - text_embedding
+            - audio_features
+            - primary_face_aus
+          config:
+            hidden_size: 512
+            output_size: 256
+        -
+          type: multiinject
+          inputs:
+            - primary_face_aus
+            - audio_features
+            - text_embedding
+          config:
+            hidden_size: 512
+            output_size: 256
+    encoders:
+      encoders:
+        -
+          name: text_embedding
+          type: fc
+          config:
+            hidden_size: 128
+            output_size: 64
+        - 
+          name: audio_features
+          type: fc
+          config: 
+            hidden_size: 128
+            output_size: 64
+        -
+          name: primary_face_aus
+          type: drnn
+    fusions:
+      -
+        modules:
+          - 
+            type: alfamix
+    classify:
+      - 1
+    losses:
+      losses:
+        - 
+          type: avid
+          weight: 0.5
+          results: []
+          stages:
+            - 0
+        -
+          type: focal
+          weight: 1.0

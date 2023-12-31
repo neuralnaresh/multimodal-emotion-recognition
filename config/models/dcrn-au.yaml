@@ -1,0 +1,6 @@
+name: dcrn
+config:
+  dcrn:
+    encoders:
+      text: false
+      primary_face_au: true

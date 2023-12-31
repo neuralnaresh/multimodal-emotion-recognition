@@ -1,0 +1,24 @@
+name: utterance
+config:
+  utterance:
+    encoders:
+      encoders:
+        -
+          name: frames
+          type: timesformer
+        -
+          name: audio
+          type: wav2vec
+    classify:
+      - 0
+    losses:
+      losses:
+        -
+          type: avid
+          weight: 0.05
+          results: []
+          stages:
+            - 0
+        -
+          type: multilabelfocal
+          weight: 1.0

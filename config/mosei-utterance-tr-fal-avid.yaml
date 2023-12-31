@@ -1,0 +1,17 @@
+experiment:
+  name: MOSEI/[Utterance/Transformers/Faces,Audio,Landmarks/AVID]
+  store_path:  /panasas/scratch/grp-sreyasee/sidharth/stores/utterance
+  workers: 28
+
+  data: !ref data/mosei.yaml
+
+  model: !ref models/utterance-tr-fal-avid.yaml
+
+  train:
+    parallelization: fsdp
+    epochs: 1
+    learning_rate: 0.0005
+    optimizer:
+        optimizer: Adam
+        config:
+            weight_decay: 0.0002

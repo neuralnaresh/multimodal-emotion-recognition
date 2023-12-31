@@ -1,0 +1,20 @@
+name: MELD
+preprocess:
+  preprocessor: meld
+  dataset_path: /panasas/scratch/grp-sreyasee/sidharth/datasets/meld
+transform:
+  transforms:
+    - extract_frames
+    - extract_audio
+    - extract_faces
+    - embed_text
+    - extract_pyfeat
+    - landmarks_to_graph
+    - extract_audio_features
+  config:
+    embed_frames:
+      src: frames
+loader:
+  name: meld_conversational
+
+batch_size: 16

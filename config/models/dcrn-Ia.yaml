@@ -1,0 +1,13 @@
+name: dcrn
+config:
+  dcrn:
+    encoders:
+      text: true
+      audio_features: true
+    attention: inject
+    attention_combinations:
+      - a: text
+        b: audio_features
+    text_audio_feature_injection:
+      hidden_size: 512
+      layers: 4

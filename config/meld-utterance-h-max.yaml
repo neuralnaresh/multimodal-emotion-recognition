@@ -1,0 +1,13 @@
+experiment:
+  name: MELD/Utterance[HOG/Max]
+  store_path: /panasas/scratch/grp-sreyasee/sidharth/stores/affect
+  workers: 28
+
+  data: !ref data/meld-openface-utterance.yaml
+
+  model: !ref models/utterance-h-max.yaml
+
+  train:
+    epochs: 100
+    learning_rate: 0.001
+    optimizer: Adam

@@ -1,0 +1,6 @@
+name: dcrn
+config:
+  dcrn:
+    encoders:
+      text: true
+      primary_face_landmark_graph: true

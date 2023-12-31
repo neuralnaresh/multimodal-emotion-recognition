@@ -1,0 +1,19 @@
+name: mmt
+config:
+  mmt:
+    layers: 25
+    layer_output_size: 2048
+    patches:
+      audio_temporal: 128
+    audio_position:
+      max_temporal_buckets: 1200
+    text_position:
+      max_temporal_buckets: 32
+    encoder:
+      fusion:
+        mechanism: concat
+    post_projection_size:  4096
+    classification_hidden_size: 1024
+    calibration_weight: 1.0
+    nce_weight: 0.5
+    kd_weight: 0.5

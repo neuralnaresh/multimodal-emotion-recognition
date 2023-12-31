@@ -1,0 +1,7 @@
+name: bidrnn
+config:
+  bidrnn:
+    encoders:
+      frames: false
+      audio: false
+      audio_features: true

@@ -1,0 +1,16 @@
+name: dcrn
+config:
+  dcrn:
+    encoders:
+      text: true
+      primary_face_au: true
+    attention: inject
+    attention_combinations:
+      - a: text
+        b: primary_face_au
+    primary_face_au:
+      hidden_size: 128
+      output_size: 256
+    text_primary_face_au_injection:
+      hidden_size: 128
+      layers: 4

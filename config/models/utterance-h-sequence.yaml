@@ -1,0 +1,7 @@
+name: utterance
+config:
+  utterance:
+    encoders:
+      primary_face_hog:
+        type: sequence
+        module: rnn

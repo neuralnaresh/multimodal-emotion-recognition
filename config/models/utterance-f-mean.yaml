@@ -1,0 +1,7 @@
+name: utterance
+config:
+  utterance:
+    encoders:
+      frames:
+        type: mean
+        module: fc

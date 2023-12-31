@@ -1,0 +1,9 @@
+name: dcrn
+config:
+  dcrn:
+    encoders:
+      text: true
+      audio_features: true
+      primary_face_hog: true
+      primary_face_au: true
+      primary_face_landmark_graph: true
